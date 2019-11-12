@@ -50,4 +50,26 @@ We hope you understand why we do this. The best way to see what a footballer is 
 
 You can use a plain text full English Scrabble dictionary such as this one: [Dictionay](https://github.com/jonbcard/scrabble-bot/blob/master/src/dictionary.txt)
 
+## Installation
 
+Step and step guid to get project running
+
+1. Clone/Download the poject
+2. Go to project directory through terminal
+3. Install bundler and gems
+
+```shell
+gem install bundler
+bundle install
+```
+
+## Execution
+
+1. Run tests ```rspec spec/phone_to_word_spec.rb```
+2. Execute program ```bin/run```
+
+if ```bin/run``` has error with permission, please run following command on your terminal from project directory
+
+```shell
+chmod 755 bin/run
+```

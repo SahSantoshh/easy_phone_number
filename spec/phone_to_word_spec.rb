@@ -21,8 +21,8 @@ RSpec.describe 'PhoneToWord' do
     end
 
     context 'valid phone number with length 10, no 0s and 1a' do
-      it 'should through InvaliPhoneNumber exception' do
-        expect { PhoneToWord.new(2_345_678_922) }.not_to raise_error(InvalidPhoneError)
+      it 'should not throw InvaliPhoneNumber exception' do
+        expect { PhoneToWord.new(2_345_678_922) }.to_not raise_error
       end
     end
   end
