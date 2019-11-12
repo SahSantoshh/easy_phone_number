@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'benchmark'
 require 'pry'
 require_relative '../lib/phone_to_word'
 
@@ -8,7 +9,8 @@ def run
   phone_to_word = PhoneToWord.new
 
   puts '\n All possible word:\n'
-  puts phone_to_word.possilbe_words_combinations
+  time_taken = Benchmark.realtime { puts phone_to_word.possilbe_words_combinations.inspect }
+  puts "\nTime to execute: #{(time_taken.real * 1000).round(2)}ms"
 end
 
 run
