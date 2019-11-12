@@ -5,18 +5,21 @@ require 'spec_helper'
 RSpec.describe 'PhoneToWord' do
   describe 'initialize' do
     context 'invalid phone number with 0s and 1s' do
-      it 'should through InvaliPhoneNumber exception' do
-        expect { PhoneToWord.new(1_081_787_825) }.to raise_error(InvalidPhoneError)
+      it 'should show error message for number with 0s and 1s' do
+        phone = PhoneToWord.new(1_081_787_825).valid_phone_number?
+        expect(phone).to eq(nil)
       end
     end
 
     context 'invalid phone number with mismatch length' do
-      it 'should through InvaliPhoneNumber exception for number with more than 10 digits' do
-        expect { PhoneToWord.new(234_581_787_825) }.to raise_error(InvalidPhoneError)
+      it 'should show error message for number with more than 10 digits' do
+        phone = PhoneToWord.new(1_081_787_825).valid_phone_number?
+        expect(phone).to eq(nil)
       end
 
-      it 'should through InvaliPhoneNumber exception for number with less than 10 digits' do
-        expect { PhoneToWord.new(81_787_825) }.to raise_error(InvalidPhoneError)
+      it 'should show error message for number with less than 10 digits' do
+        phone = PhoneToWord.new(1_081_787_825).valid_phone_number?
+        expect(phone).to eq(nil)
       end
     end
 

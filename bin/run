@@ -7,10 +7,11 @@ require_relative '../lib/phone_to_word'
 
 def run
   phone_to_word = PhoneToWord.new
-
-  puts '\n All possible word:\n'
-  time_taken = Benchmark.realtime { puts phone_to_word.possilbe_words_combinations.inspect }
-  puts "\nTime to execute: #{(time_taken.real * 1000).round(2)}ms"
+  if phone_to_word.valid_phone_number?
+    puts "\nAll possible word:\n"
+    time_taken = Benchmark.realtime { puts phone_to_word.possilbe_words_combinations.inspect }
+    puts "\nTime to execute: #{(time_taken.real * 1000).round(2)}ms"
+  end
 end
 
 run

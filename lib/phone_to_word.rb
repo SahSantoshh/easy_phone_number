@@ -45,6 +45,8 @@ class PhoneToWord
 
     # Raise custom exception on invalid phone number
     raise InvalidPhoneError unless valid_phone_number?
+  rescue InvalidPhoneError
+    puts 'Please enter 10 digit phone number without any 0s and 1s.'
   end
 
   # will return false if phone number invalid
