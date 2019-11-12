@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pry'
+require_relative '../lib/phone_to_word'
+
+def run
+  phone_to_word = PhoneToWord.new
+
+  puts '\n All possible word:\n'
+  binding.pry
+  puts phone_to_word.possilbe_words_combinations
+end
+
+run
